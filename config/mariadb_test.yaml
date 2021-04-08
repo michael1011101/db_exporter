@@ -1,0 +1,13 @@
+name: "mariadb_test"
+enable: true
+endpoint: "/metrics/mariadb/15s"
+queryConfigs:
+  - version: 1.0.0
+    query: "SELECT id, value from test.tnum"
+    json: false
+    metrics:
+      - name: mariadb_value
+        value: value
+        labels:
+          id: id
+        desc: "the value of mariadb"

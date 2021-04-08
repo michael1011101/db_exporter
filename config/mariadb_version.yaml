@@ -1,0 +1,13 @@
+name: "mariadb_test"
+enable: true
+endpoint: "/metrics/mariadb/1d"
+queryConfigs:
+  - version: 1.0.0
+    query: "SELECT version from test.version"
+    json: false
+    metrics:
+      - name: mariadb_version
+        value: 1
+        labels:
+          version: version
+        desc: "the version of mariadb"
